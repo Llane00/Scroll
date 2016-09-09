@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<title>scroll test</title>
+<title>scroll test1</title>
 <style type="text/css">
 body{
 margin:0; 
@@ -37,7 +37,7 @@ li:hover{
 color: #fff;
 border-bottom: 0.32rem solid #FBCB72;
 }
-.flexed{
+.isFixed{
 position:fixed;
 top:0;
 z-index: 999;
@@ -50,17 +50,21 @@ z-index: 999;
 		<nav id="title">
 			<ul>
 				<li>scrollTop:</li>
-				<li id="scroll"></li>
+				<li id="scroll">0</li>
 			</ul>
 		</nav>
 	</header>
+	<main></main>
 	<script type="text/javascript">
-	$(window).scroll(function(){ 
+	$(window).scroll(function(){
+		//show scroll's value 
 		$("#scroll").text($(window).scrollTop());
+		//control target's fix value 
+		//and 300 can be set what you want
 	    if($(window).scrollTop()>300){ 
-			$("#title").addClass('flexed');
+			$("#title").addClass('isFixed');
 		}else{
-			$("#title").removeClass("flexed");
+			$("#title").removeClass("isFixed");
 		};
 	});
 	</script>
