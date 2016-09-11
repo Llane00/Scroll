@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>scroll test3</title>
+<style type="text/css">
+body{
+height: 2000px;
+}
+.tip{
+position: fixed;
+z-index: 999;
+margin-left: 30%;
+width: 40%;
+color: #fff;
+text-align: center;
+background: #000;
+}
+</style>
+<script src="../public/js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<main>
+	<div class="tip">
+		<h1>Scroll !!!</h1>
+		<p>then you will find something!</p>
+	</div>
+</main>
+<script type="text/javascript">
+	$(window).scroll(function(){
+		var scrollTop = $(this).scrollTop();
+		var scrollHeight = $(document).height();
+		var windowHeight = $(this).height();
+		if(scrollTop == 0){
+			alert("Now you are in the top!");
+		};
+		if(scrollTop + windowHeight == scrollHeight){
+			alert("Now you are in the bottom!");
+		};
+	});
+</script>
+</body>
+</html>
